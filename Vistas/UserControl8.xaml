@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Vistas.UserControl8"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vistas"
+             mc:Ignorable="d" Height="263" Width="505">
+    <Grid Height="253" VerticalAlignment="Top" Margin="76,10,76,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="268*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Usuario" Height="28" HorizontalAlignment="Left" x:Name="label2" VerticalAlignment="Top" Margin="10,98,0,0" Foreground="White" FontSize="14" Grid.Column="1" />
+        <Label Content="Contraseña" Height="28" HorizontalAlignment="Left" Margin="75,128,0,0" x:Name="label3" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.ColumnSpan="2" />
+        <TextBox Height="24" HorizontalAlignment="Left" Margin="78,98,0,0" x:Name="txtUser" VerticalAlignment="Top" Width="132" Grid.Column="1" />
+        <PasswordBox Height="24" HorizontalAlignment="Left" Margin="78,132,0,0" x:Name="txtpassword" VerticalAlignment="Top" Width="132" Grid.Column="1" />
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="Vistas.ListaDeEstados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:Vistas"
+        Title="ListaDeEstados" Height="327" Width="293" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid Height="333">
+        <Grid.Resources>
+            <XmlDataProvider x:Key="tipo_Estado" Source="Estados.xml" XPath="/estados"/>
+            <converters:ConversorDeEstados x:Key="convertidorDeEstados"/>
+        </Grid.Resources>
+        <Rectangle Height="354" Width="646">
+            <Rectangle.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="#8C4318" Offset="0.1"></GradientStop>
+                    <GradientStop Color="#400D09" Offset="0.4"></GradientStop>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Numero de Factura" Margin="70,39,72,222" Name="label1" FontSize="14" FontFamily="Montserrat" Foreground="White" />
+        <TextBox Margin="80,71,0,0" Name="textBox1" Height="23" Width="124" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Estado de Factura" Margin="75,103,76,158" Name="label2" FontSize="14" FontFamily="Montserrat" Foreground="White" />
+        <TextBlock Height="23" Margin="94,13,76,297" Name="txtConversor" Text="CONVERSOR" FontSize="14" FontFamily="Dotum" Foreground="White" FontWeight="Bold" />
+        <ComboBox x:Name="comboEstados" Height="30" Margin="75,129,72,174" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                      ItemsSource="{Binding Source={StaticResource tipo_Estado}, XPath=tipo/@name, Mode=TwoWay}" />
+        <Rectangle Height="27" Margin="70,181,67,0" Stroke="White" Name="rectangle1" Fill="{Binding
+                ElementName=comboEstados,Path=SelectedValue,Converter={StaticResource convertidorDeEstados}}" VerticalAlignment="Top" />
+        <Button Content="Ingresar" FontFamily="Montserrat" FontSize="14" Foreground="White" AllowDrop="False" Background="#BFA8A3" BorderBrush="White" BorderThickness="1,1,0,1" ClipToBounds="False" Height="23" HorizontalAlignment="Left" Name="button1" Width="75" Click="button1_Click" Margin="106,225,0,85" />
+        <Button Content="Salir" FontFamily="Montserrat" FontSize="14" Foreground="White" AllowDrop="False" Background="#BFA8A3" BorderBrush="White" BorderThickness="1,1,0,1" ClipToBounds="False" Height="23" HorizontalAlignment="Left"  Name="btnAD" Width="75" Margin="106,256,0,54" Click="btnAD_Click" />
+    </Grid>
+</Window>

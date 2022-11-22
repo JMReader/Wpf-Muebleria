@@ -1,0 +1,74 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Punto 2 Estilo para botones comunes -->
+    <ControlTemplate x:Key="BotonPlantilla" TargetType="{x:Type Button}">
+        <Border x:Name="btnNuevo"
+                AllowDrop="False"
+                Background="#BFA8A3" 
+                BorderThickness="1,1,0,1"
+                ClipToBounds="False" 
+                Height="23"
+                Width="75">
+            <TextBlock FontFamily="Montserrat"
+                       FontSize="14"
+                       Foreground="White"
+              HorizontalAlignment="Center" 
+                        VerticalAlignment="Center">
+                <ContentPresenter 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" 
+                               >
+        </ContentPresenter>
+            </TextBlock>
+        </Border>
+    </ControlTemplate>
+
+    <!-- Punto 2 Estilo para boton eliminar -->
+    <ControlTemplate x:Key="BotonEliminar" TargetType="{x:Type Button}">
+        <Border x:Name="btnNuevo"
+                AllowDrop="False"
+                Background="#FF5C2323" 
+                BorderThickness="1,1,0,1"
+                ClipToBounds="False" 
+                Height="23"
+                Width="75">
+            <TextBlock FontFamily="Montserrat"
+                       FontSize="14"
+                       Foreground="White"
+              HorizontalAlignment="Center" 
+                        VerticalAlignment="Center">
+                <ContentPresenter 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" 
+                               >
+        </ContentPresenter>
+            </TextBlock>
+        </Border>
+    </ControlTemplate>
+
+    <!-- Punto 2 Estilo para boton Guardar -->
+    <ControlTemplate x:Key="BtnGuardar" TargetType="{x:Type Button}">
+        <Border x:Name="btnNuevo"
+                AllowDrop="False"
+                Background="#109901"
+                BorderThickness="1,1,0,1"
+                ClipToBounds="False" 
+                Height="23"
+                Width="75">
+            <TextBlock FontFamily="Montserrat"
+                       FontSize="14"
+                       Foreground="White"
+              HorizontalAlignment="Center" 
+                        VerticalAlignment="Center">
+                <ContentPresenter 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" 
+                               >
+        </ContentPresenter>
+            </TextBlock>
+        </Border>
+    </ControlTemplate>
+
+    
+    
+</ResourceDictionary>

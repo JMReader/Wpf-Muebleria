@@ -1,0 +1,80 @@
+﻿<Window x:Class="Vistas.MenuClientes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:svc = "clr-namespace:ClasesBase;assembly=ClasesBase"
+        Title="MenuClientes"  Height="354" Width="646" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="DATA_CLI" ObjectType="{x:Type svc:TrabajarClientes}" MethodName="TraerClientes" />
+    </Window.Resources>
+    <Grid Background="#FF04527C" Loaded="Grid_Loaded">
+        <Rectangle Height="354" Width="646">
+            <Rectangle.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="#8C4318" Offset="0.25"></GradientStop>
+                    <GradientStop Color="#400D09" Offset="0.5"></GradientStop>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Style="{StaticResource TriggerBotonPunto3}" Margin="12,12,0,0" Name="btnNuevo" ToolTip="Agregar un nuevo cliente" Click="btnNuevo_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/nuevo.png"></Image>
+                <TextBlock Text=" Nuevo"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource TriggerBotonPunto3}" Margin="115,12,0,0" Name="btnModificar" ToolTip="Modificar el cliente seleccionado" Click="btnModificar_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/modificar.png"></Image>
+                <TextBlock Text=" Modificar"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource BtnEliminar}" Margin="219,12,0,0" Name="btnEliminar" ToolTip="Eliminar el cliente seleccionado" Click="btnEliminar_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/delete.png"></Image>
+                <TextBlock Text=" Eliminar"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource BGuardar}" Margin="416,12,0,0" Name="btnGuardar" ToolTip="Guardar la información del cliente" Click="btnGuardar_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/guardar.png"></Image>
+                <TextBlock Text=" Guardar"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource TriggerBotonPunto3}" Margin="519,12,0,0" Name="btnCancelar" ToolTip="Cancelar operación" Click="btnCancelar_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/cancelar.png"></Image>
+                <TextBlock Text=" Cancelar"></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Canvas Name="Clientes" DataContext="{Binding Source={StaticResource ResourceKey=DATA_CLI}}">
+            <Label Content="DNI :" Height="28" HorizontalAlignment="Left" Margin="132,81,0,0" Name="label1" VerticalAlignment="Top" FontSize="14" FontFamily="Montserrat" Foreground="White" Canvas.Top="-8" />
+            <Label Content="Nombre :" FontFamily="Montserrat" FontSize="14" Height="28" HorizontalAlignment="Left" Margin="105,124,0,0" Name="label2" VerticalAlignment="Top" Foreground="White" Canvas.Top="-8" />
+            <Label Content="Apellido :" FontFamily="Montserrat" FontSize="14" Height="28" HorizontalAlignment="Left" Margin="105,166,0,0" Name="label3" VerticalAlignment="Top" Foreground="White" Canvas.Top="-8" />
+            <Label Content="Direccion :" FontFamily="Montserrat" FontSize="14" Height="28" HorizontalAlignment="Left" Margin="99,209,0,0" Name="label4" VerticalAlignment="Top" Foreground="White" Canvas.Top="-8" />
+            <TextBox Name="txtDNI" Text="{Binding DNI}" Style="{StaticResource Texto}" Margin="184,83,0,0" Canvas.Top="-8" />
+            <TextBox Name="txtNombre" Text="{Binding Nombre}" Style="{StaticResource Texto}" Margin="184,125,0,0" Canvas.Top="-8" />
+            <TextBox Name="txtApellido" Text="{Binding Apellido}" Style="{StaticResource Texto}" Margin="184,168,0,0" Canvas.Top="-8" />
+            <TextBox Name="txtDireccion" Text="{Binding Direccion}" Style="{StaticResource Texto}" Margin="184,210,0,0" Canvas.Top="-8" />
+            <Button Name="btnPrimero" Style="{StaticResource BotonNavegar}" Margin="12,272,562,12" ToolTip="Ir al primer registro" Click="btnPrimero_Click">
+                <Image Source="/Vistas;component/Images/pri.png" ></Image>
+            </Button>
+            <Button Name="btnAnterior" Style="{StaticResource BotonNavegar}" Margin="68,272,506,12" ToolTip="Ir al anterior" Click="btnAnterior_Click">
+                <Image Source="/Vistas;component/Images/ant1.png" Width="30" Height="15"></Image>
+            </Button>
+            <Button Name="btnSiguiente" Style="{StaticResource BotonNavegar}" Margin="126,272,448,13" ToolTip="Ir al siguiente" Click="btnSiguiente_Click">
+                <Image Source="/Vistas;component/Images/sig1.png" Width="30" Height="15"></Image>
+            </Button>
+            <Button Name="btnUltimo" Style="{StaticResource BotonNavegar}" Margin="184,272,390,13" ToolTip="Ir al ultimo registro" Click="btnUltimo_Click">
+                <Image Source="/Vistas;component/Images/ult.png"></Image>
+            </Button>
+            
+        </Canvas>
+
+        <Button Style="{StaticResource TriggerBotonPunto3}" Margin="519,280,0,0" Name="btnSalir" ToolTip="Salir del Menu" Click="btnSalir_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/salir1.png"></Image>
+                <TextBlock Text=" Salir"></TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

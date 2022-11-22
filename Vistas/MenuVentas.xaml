@@ -1,0 +1,97 @@
+﻿<Window x:Class="Vistas.MenuVentas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MenuVentas" Height="354" Width="646" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        xmlns:svc = "clr-namespace:ClasesBase;assembly=ClasesBase">
+    <Window.Resources>
+        <ObjectDataProvider ObjectType="{x:Type svc:TrabajarProductos}" MethodName="traerProducto" x:Key="listarProd"/>
+    </Window.Resources>
+    <Grid>
+        <Rectangle Height="354" Width="646">
+            <Rectangle.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="#8C4318" Offset="0.25"></GradientStop>
+                    <GradientStop Color="#400D09" Offset="0.5"></GradientStop>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button Style="{StaticResource TriggerBotonPunto3}" Margin="12,12,0,0" Name="btnNuevo" IsEnabled="True" Click="btnNuevo_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/nuevo.png"></Image>
+                <TextBlock Text=" Nuevo"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource TriggerBotonPunto3}" Margin="115,12,0,0" Name="btnModificar" IsEnabled="False">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/modificar.png"></Image>
+                <TextBlock Text=" Modificar"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource BtnEliminar}" Margin="219,12,0,0" Name="btnEliminar" IsEnabled="False">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/delete.png"></Image>
+                <TextBlock Text=" Eliminar"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource BGuardar}" Margin="416,12,113,0" Name="btnGuardar" ToolTip="Guardar Venta" Click="btnGuardar_Click" IsEnabled="False">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/guardar.png"></Image>
+                <TextBlock Text=" Guardar"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource TriggerBotonPunto3}" Margin="519,12,0,0" Name="btnCancelar" ToolTip="Cancelar operación">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/cancelar.png"></Image>
+                <TextBlock Text=" Cancelar"></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Label Content="N° Factura :" Height="28" HorizontalAlignment="Left" Margin="9,81,0,0" Name="label1" VerticalAlignment="Top" FontSize="14" FontFamily="Montserrat" Foreground="White" />
+        <Label Content="Fecha :" FontFamily="Montserrat" FontSize="14" Height="28" HorizontalAlignment="Left" Margin="38,107,0,0" Name="label2" VerticalAlignment="Top" Foreground="White" />
+        <Label Content="Legajo :" FontFamily="Montserrat" FontSize="14" Height="28" HorizontalAlignment="Left" Margin="32,134,0,0" Name="label3" VerticalAlignment="Top" Foreground="White" />
+        <Label Content="DNI :" FontFamily="Montserrat" FontSize="14" Height="28" HorizontalAlignment="Left" Margin="46,165,0,0" Name="label4" VerticalAlignment="Top" Foreground="White" />
+        <TextBox Background="White" BorderBrush="#BFA8A3" BorderThickness="0,0,0,2" Height="23" HorizontalAlignment="Left" Margin="93,81,0,0" Name="txtFactura" VerticalAlignment="Top" Width="173"  PreviewTextInput="txtFactura_PreviewTextInput" IsEnabled="False" />
+        <TextBox Background="White" BorderBrush="#BFA8A3" BorderThickness="0,0,0,2" Height="23" HorizontalAlignment="Left" Margin="93,139,0,0" Name="txtLegajo" VerticalAlignment="Top" Width="173" IsEnabled="False" />
+        <TextBox Background="White" BorderBrush="#BFA8A3" BorderThickness="0,0,0,2" Height="23" HorizontalAlignment="Left" Margin="93,170,0,0" Name="txtDNI" VerticalAlignment="Top" Width="173" PreviewTextInput="txtDNI_PreviewTextInput" IsEnabled="False" />
+        <DatePicker Height="25" HorizontalAlignment="Left" Margin="93,110,0,0" Name="datePicker1" VerticalAlignment="Top" Width="173" Text="Seleccione una fecha" IsEnabled="False" />
+
+        <Button Name="btnPrimero" Width="50" Height="30" Margin="10,271,564,14" Background="#BFA8A3" BorderBrush="White">
+            <Image Source="/Vistas;component/Images/pri.png"></Image>
+        </Button>
+        <Button Name="btnAnterior" Width="50" Height="30" Margin="75,272,0,13" Background="#BFA8A3" BorderBrush="White" IsEnabled="True" HorizontalAlignment="Left">
+            <Image Source="/Vistas;component/Images/ant1.png" Width="30" Height="15"></Image>
+        </Button>
+        <Button Name="btnSiguiente" Width="50" Height="30" Margin="126,272,448,13" Background="#BFA8A3" BorderBrush="White" IsEnabled="True" IsDefault="False" IsCancel="False">
+            <Image Source="/Vistas;component/Images/sig1.png" Width="30" Height="15"></Image>
+        </Button>
+        <Button Name="btnUltimo" Width="50" Height="30" Margin="0,272,390,13" Background="#BFA8A3" BorderBrush="White" IsEnabled="True" HorizontalAlignment="Right">
+            <Image Source="/Vistas;component/Images/ult.png"></Image>
+        </Button>
+
+        <Button Style="{StaticResource TriggerBotonPunto3}" Margin="519,280,0,0" Name="btnSalir" ToolTip="Salir hscia el Menu" Click="btnSalir_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Vistas;component/Images/salir1.png"></Image>
+                <TextBlock Text=" Salir"></TextBlock>
+            </StackPanel>
+        </Button>
+        <TextBlock Height="35" HorizontalAlignment="Left" Margin="411,41,0,0" Name="textBlock1" Text="Debe rellenar todos los campos para guardar !!" VerticalAlignment="Top" Width="203" Foreground="White" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center" Visibility="Visible" Opacity="0" />
+        <ListView Name="Prod" Height="172" HorizontalAlignment="Left" Margin="285,81,0,0"  VerticalAlignment="Top" Width="327" ItemsSource="{Binding Source={StaticResource listarProd}}" SelectionChanged="listView1_SelectionChanged_1" IsEnabled="False">
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Codigo" Width="auto" DisplayMemberBinding="{Binding Path=CodProducto}"></GridViewColumn>
+                    <GridViewColumn Header="Categoria" Width="auto" DisplayMemberBinding="{Binding Path=Categoria}"></GridViewColumn>
+                    <GridViewColumn Header="Color" Width="auto" DisplayMemberBinding="{Binding Path=Color}"></GridViewColumn>
+                    <GridViewColumn Header="Descripcion" Width="auto" DisplayMemberBinding="{Binding Path=Descripcion}"></GridViewColumn>
+                    <GridViewColumn Header="Precio" Width="auto" DisplayMemberBinding="{Binding Path=Precio}"></GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <TextBox Background="White" BorderBrush="#BFA8A3" BorderThickness="0,0,0,2" Height="23" HorizontalAlignment="Left" Margin="93,199,0,0" Name="textBox1" VerticalAlignment="Top" Width="173" PreviewTextInput="textBox1_PreviewTextInput" TextChanged="textBox1_TextChanged" IsEnabled="False" />
+        <Label Content="Cantidad:" FontFamily="Montserrat" FontSize="14" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="19,194,0,0" Name="label5" VerticalAlignment="Top" />
+        <Label Content="Importe total :" FontFamily="Montserrat" FontSize="14" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="0,225,0,0" Name="label6" VerticalAlignment="Top" />
+        <TextBlock Name="totaltxt" Height="23" HorizontalAlignment="Left" Margin="101,227,0,0"  Text="0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontStyle="Normal" FontSize="16" />
+    </Grid>
+</Window>
