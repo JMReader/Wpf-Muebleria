@@ -11,7 +11,7 @@ namespace ClasesBase
     public class TrabajarClientes
     {
         public static ObservableCollection<Cliente> TraerClientes() {
-            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.muebleriaConnectionString);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "ListarClientes";
             cmd.CommandType = CommandType.StoredProcedure;

@@ -26,7 +26,7 @@ namespace ClasesBase
 
         public DataTable traerProducto()
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.muebleriaConnectionString);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT * FROM Producto";
             cmd.CommandType = CommandType.Text;

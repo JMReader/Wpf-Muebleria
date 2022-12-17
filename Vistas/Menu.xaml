@@ -20,7 +20,7 @@
             </MenuItem>
             <MenuItem Name="Productos" Header="Productos" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0">
                 <MenuItem Name="ABMProductos" Header="ABMProductos" Foreground="Black" Click="Productos_Click"></MenuItem>
-                
+
             </MenuItem>
             <MenuItem Name="Ventas" Header="Ventas" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0" >
                 <MenuItem Name="ABMVentas" Header="ABMVentas" Foreground="Black" Click="Ventas_Click" ></MenuItem>
@@ -30,6 +30,6 @@
                 <MenuItem Name="ABMVendedores" Header="ABMVendedores" Foreground="Black"></MenuItem>
             </MenuItem>
         </Menu>
-        <Button Content="Acerca De" FontFamily="Montserrat" FontSize="14" Foreground="White" AllowDrop="False" Background="#26150F" BorderBrush="White" BorderThickness="1,1,0,1" ClipToBounds="False" Height="23" HorizontalAlignment="Left" Margin="265,280,0,0" Name="btnAD" Width="75" Grid.Column="1" Click="btnAD_Click" />
+        <Button Content="Acerca De" FontFamily="Montserrat" FontSize="14" Foreground="White" AllowDrop="False" BorderBrush="White" BorderThickness="1,1,0,1" ClipToBounds="False" Height="23" Margin="246,305,0,10" Name="btnAD" Grid.Column="1" Click="btnAD_Click" HorizontalAlignment="Left" Width="75" Background="#FF26150F" />
     </Grid>
 </Window>
