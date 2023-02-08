@@ -74,22 +74,29 @@ namespace Vistas
             Menu menu = new Menu();
             menu.Show();
         }
-        /* Punto 1 C
-        List<Cliente> listaFiltrada = new List<Cliente>();
-        private void btn_Imprimir_Click(object sender, RoutedEventArgs e)
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (Cliente cli in ListaClientesFiltro.Items)
-            {
-                listaFiltrada.Add(cli);
-            }
 
-            listaFiltrada = ListaClientesFiltro.Items.Cast<Cliente>().ToList();
-            TrabajarClientes.agregarListaClientess(listaFiltrada);
-            //MessageBox.Show("Cantidad:" + listaFiltrada.Count.ToString());
-
-            VistaPreviaDeImpresion oImprimir = new VistaPreviaDeImpresion(vistaColeccionFiltrada);
-            oImprimir.Show();
         }
-        */
+
+
+        /* Punto 1 C
+List<Cliente> listaFiltrada = new List<Cliente>();
+private void btn_Imprimir_Click(object sender, RoutedEventArgs e)
+{
+   foreach (Cliente cli in ListaClientesFiltro.Items)
+   {
+       listaFiltrada.Add(cli);
+   }
+
+   listaFiltrada = ListaClientesFiltro.Items.Cast<Cliente>().ToList();
+   TrabajarClientes.agregarListaClientess(listaFiltrada);
+   //MessageBox.Show("Cantidad:" + listaFiltrada.Count.ToString());
+
+   VistaPreviaDeImpresion oImprimir = new VistaPreviaDeImpresion(vistaColeccionFiltrada);
+   oImprimir.Show();
+}
+*/
     }
 }

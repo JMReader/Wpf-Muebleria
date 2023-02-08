@@ -36,7 +36,7 @@
                   Margin="0,129,0,28"                        
                   ItemsSource="{Binding 
                   Source={StaticResource FILTRO_APELLIDO} }"
-                  IsSynchronizedWithCurrentItem="True">
+                  IsSynchronizedWithCurrentItem="True" >
 
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">

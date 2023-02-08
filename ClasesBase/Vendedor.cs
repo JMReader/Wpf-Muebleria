@@ -10,9 +10,12 @@ namespace ClasesBase
         public string Legajo { get; set; }
         public string Nombre { get; set;}
         public string Apellido { get; set;}
+        public string passw { get; set; }
+        public Boolean isAdmin { get; set; };
 
         public Vendedor()
         { 
+
         
         }
     }

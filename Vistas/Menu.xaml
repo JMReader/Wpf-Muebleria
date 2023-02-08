@@ -3,33 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Menu" Height="354" Width="646" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded" Icon="/Vistas;component/Images/logo.png">
     <Grid Background="#400D09">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="136*"/>
+            <RowDefinition Height="33*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="272*" />
             <ColumnDefinition Width="352*" />
         </Grid.ColumnDefinitions>
-        <Image  Margin="-98,38,-98,-25" Name="image1"  Stretch="Uniform" Source="/Vistas;component/Images/madera.jpeg" Opacity="1" Grid.ColumnSpan="2" />
-        <Image Source="/Vistas;component/Images/logo.png" Grid.ColumnSpan="2" Margin="137,38,157,0"></Image>
-        <Menu Height="51" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="711" Background="#26150F" Margin="0,1,0,0" Grid.ColumnSpan="2">
-            <MenuItem Name="Proveedores" Header="Proveedores" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0">
-                <MenuItem Name="ABMProveedores" Header="ABMProveedores" Foreground="Black" Click="ABMProveedores_Click"></MenuItem>
+        <Image  Margin="-66,38,-29,0" x:Name="image1"  Stretch="Uniform" Source="/Vistas;component/Images/madera.jpeg" Opacity="1" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+        <Image Source="/Vistas;component/Images/logo.png" Grid.ColumnSpan="2" Margin="137,38,157,0" Grid.RowSpan="2"/>
+        <Menu Height="51" HorizontalAlignment="Left" x:Name="menu1" VerticalAlignment="Top" Width="711" Background="#26150F" Margin="0,1,0,0" Grid.ColumnSpan="2">
+            <MenuItem x:Name="Proveedores" Header="Proveedores" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0">
+                <MenuItem x:Name="ABMProveedores" Header="ABMProveedores" Foreground="Black" Click="ABMProveedores_Click"/>
             </MenuItem>
-            <MenuItem Name="Clientes" Header="Clientes" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0" >
-                <MenuItem Name="ABMClientes" Header="ABMClientes" Foreground="Black" Click="Clientes_Click"></MenuItem>
-                <MenuItem Name="filtroClientes" Header="Busqueda Clientes" Foreground="Black" Click="filtroClientes_Click"></MenuItem>
-                <MenuItem Name="impresion" Header="Impresion clientes" Foreground="Black" Click="Productos_Click_1"></MenuItem>
+            <MenuItem x:Name="Clientes" Header="Clientes" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0" >
+                <MenuItem x:Name="ABMClientes" Header="ABMClientes" Foreground="Black" Click="Clientes_Click"/>
+                <MenuItem x:Name="filtroClientes" Header="Busqueda Clientes" Foreground="Black" Click="filtroClientes_Click"/>
+                <MenuItem x:Name="impresion" Header="Impresion clientes" Foreground="Black" Click="Productos_Click_1"/>
             </MenuItem>
-            <MenuItem Name="Productos" Header="Productos" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0">
-                <MenuItem Name="ABMProductos" Header="ABMProductos" Foreground="Black" Click="Productos_Click"></MenuItem>
+            <MenuItem x:Name="Productos" Header="Productos" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0">
+                <MenuItem x:Name="ABMProductos" Header="ABMProductos" Foreground="Black" Click="Productos_Click"/>
 
             </MenuItem>
-            <MenuItem Name="Ventas" Header="Ventas" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0" >
-                <MenuItem Name="ABMVentas" Header="ABMVentas" Foreground="Black" Click="Ventas_Click" ></MenuItem>
-                <MenuItem Name="ListaDeEstados" Header="Conversor de estado de facturas" Foreground="Black" Click="ListaDeEstados_Click"></MenuItem>
+            <MenuItem x:Name="Ventas" Header="Ventas" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0" >
+                <MenuItem x:Name="ABMVentas" Header="ABMVentas" Foreground="Black" Click="Ventas_Click" />
+                <MenuItem x:Name="ListaDeEstados" Header="Conversor de estado de facturas" Foreground="Black" Click="ListaDeEstados_Click"/>
             </MenuItem>
-            <MenuItem Name="Vendedores" Header="Vendedores" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0" Click="Vendedores_Click">
-                <MenuItem Name="ABMVendedores" Header="ABMVendedores" Foreground="Black"></MenuItem>
+            <MenuItem x:Name="Vendedores" Header="Vendedores" Foreground="White" FontSize="14" BorderBrush="White" MinHeight="46" MinWidth="120" BorderThickness="0,0,2,0" Click="Vendedores_Click">
+                <MenuItem x:Name="ABMVendedores" Header="ABMVendedores" Foreground="Black"/>
             </MenuItem>
         </Menu>
-        <Button Content="Acerca De" FontFamily="Montserrat" FontSize="14" Foreground="White" AllowDrop="False" BorderBrush="White" BorderThickness="1,1,0,1" ClipToBounds="False" Height="23" Margin="246,305,0,10" Name="btnAD" Grid.Column="1" Click="btnAD_Click" HorizontalAlignment="Left" Width="75" Background="#FF26150F" />
+        <Button Content="Acerca De" FontFamily="Montserrat" FontSize="14" Foreground="White" AllowDrop="False" BorderBrush="White" BorderThickness="1,1,0,1" ClipToBounds="False" Height="23" Margin="243,22,0,21" x:Name="btnAD" Grid.Column="1" Click="btnAD_Click" HorizontalAlignment="Left" Width="75" Background="#FF26150F" Grid.Row="1" />
     </Grid>
 </Window>
