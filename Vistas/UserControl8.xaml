@@ -10,7 +10,7 @@
             <ColumnDefinition Width="85*"/>
             <ColumnDefinition Width="268*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Usuario" Height="28" HorizontalAlignment="Left" x:Name="label2" VerticalAlignment="Top" Margin="10,98,0,0" Foreground="White" FontSize="14" Grid.Column="1" />
+        <Label Content="Legajo" Height="28" HorizontalAlignment="Left" x:Name="label2" VerticalAlignment="Top" Margin="10,98,0,0" Foreground="White" FontSize="14" Grid.Column="1" />
         <Label Content="Contraseña" Height="28" HorizontalAlignment="Left" Margin="75,128,0,0" x:Name="label3" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.ColumnSpan="2" />
         <TextBox Height="24" HorizontalAlignment="Left" Margin="78,98,0,0" x:Name="txtUser" VerticalAlignment="Top" Width="132" Grid.Column="1" />
         <PasswordBox Height="24" HorizontalAlignment="Left" Margin="78,132,0,0" x:Name="txtpassword" VerticalAlignment="Top" Width="132" Grid.Column="1" />

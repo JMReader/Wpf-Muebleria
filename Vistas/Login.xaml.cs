@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using ClasesBase;
 
 namespace Vistas
 {
@@ -19,6 +20,7 @@ namespace Vistas
     /// </summary>
     public partial class Login : Window
     {
+        TrabajarVendedor vendedorsql = new TrabajarVendedor();
         public Login()
         {
             InitializeComponent();
@@ -28,32 +30,21 @@ namespace Vistas
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            string usuarioAdmin = "admin";
-            string passAdmin = "123";
-            string usuarioVendedor = "vendedor";
-            string passVendedor = "456";
+            Vendedor user = vendedorsql.registrar(this.UserC.txtUser.Text, this.UserC.txtpassword.Password);
 
             Menu menu = new Menu();
-            if ((UserC.txtUser.Text == usuarioAdmin) && (UserC.txtpassword.Password == passAdmin))
-            {
-                //MessageBox.Show("Bienvenido", "Muebleria LPOO", MessageBoxButton.OK, MessageBoxImage.Information);
-                menu.Usuario = usuarioAdmin;
-                this.Hide();
-                menu.Show();
-            }
-            else if ((UserC.txtUser.Text == usuarioVendedor) && (UserC.txtpassword.Password == passVendedor))
-            {
-                //MessageBox.Show("Bienvenido", "Muebleria LPOO", MessageBoxButton.OK, MessageBoxImage.Information);
-                menu.Usuario = usuarioVendedor;
-                this.Hide();
-                menu.Show();
+            if (user != null) {
+                MessageBox.Show("registradopa");
+                
             }
             else
             {
-                MessageBox.Show("Usuario y/o contraseña incorrecto.", "Atención", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Legajo inexsistente, intente nuevamente", "Atención", MessageBoxButton.OK, MessageBoxImage.Information);
                 UserC.txtUser.Text = string.Empty;
                 UserC.txtpassword.Password = "";
             }
+            
+           
 
         }
 
@@ -69,6 +60,11 @@ namespace Vistas
             
 
             
+
+        }
+
+        private void UserC_Loaded(object sender, RoutedEventArgs e)
+        {
 
         }
 

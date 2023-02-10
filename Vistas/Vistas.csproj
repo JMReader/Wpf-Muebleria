@@ -319,7 +319,7 @@
     <Resource Include="Images\madera.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\maderaR.jpeg" />
+    <Content Include="Images\maderaR.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.png" />

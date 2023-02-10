@@ -9,6 +9,8 @@ namespace ClasesBase
 {
     public class TrabajarVendedor
     {
+
+
         public void cargarVendedor(Vendedor vend)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
@@ -21,7 +23,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@legajo", vend.Legajo);
             cmd.Parameters.AddWithValue("@nombre", vend.Nombre);
             cmd.Parameters.AddWithValue("@apellido", vend.Apellido);
-            
+
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -56,7 +58,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@legajo", vend.Legajo);
             cmd.Parameters.AddWithValue("@nombre", vend.Nombre);
             cmd.Parameters.AddWithValue("@apellido", vend.Apellido);
-            
+
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -66,7 +68,7 @@ namespace ClasesBase
 
         public Boolean VendedorEntabla(string legajo)
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.muebleriaConnectionString);
             SqlCommand cmd = new SqlCommand();
             Boolean aux;
             cmd.Connection = cnn;
@@ -83,6 +85,31 @@ namespace ClasesBase
             cnn.Close();
             cmd.Parameters.Clear();
             return aux;
+        }
+        public Vendedor registrar(string lega, string passw )
+        {
+           
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.muebleriaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            if (this.VendedorEntabla(lega) == true)
+            {
+                
+                cmd.Connection = cnn;
+                cmd.CommandText = "Listarvendedor";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@legajo", lega);
+                
+                DataTable vend = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(vend);
+                Vendedor aux = new Vendedor(vend.Rows[0].Field<string>("Legajo"), vend.Rows[0].Field<string>("Nombre"), vend.Rows[0].Field<string>("Apellido"), vend.Rows[0].Field<string>("passw"), vend.Rows[0].Field<Boolean>("isadmin"));
+                if (passw == aux.passw)
+                {
+                    return aux;
+                }
+                else { return null; }
+            }
+            else return new Vendedor();
         }
     }
 }
