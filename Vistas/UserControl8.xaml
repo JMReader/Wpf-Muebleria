@@ -10,10 +10,12 @@
             <ColumnDefinition Width="85*"/>
             <ColumnDefinition Width="268*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Legajo" Height="28" HorizontalAlignment="Left" x:Name="label2" VerticalAlignment="Top" Margin="10,98,0,0" Foreground="White" FontSize="14" Grid.Column="1" />
-        <Label Content="Contraseña" Height="28" HorizontalAlignment="Left" Margin="75,128,0,0" x:Name="label3" VerticalAlignment="Top" Foreground="White" FontSize="14" Grid.ColumnSpan="2" />
-        <TextBox Height="24" HorizontalAlignment="Left" Margin="78,98,0,0" x:Name="txtUser" VerticalAlignment="Top" Width="132" Grid.Column="1" />
-        <PasswordBox Height="24" HorizontalAlignment="Left" Margin="78,132,0,0" x:Name="txtpassword" VerticalAlignment="Top" Width="132" Grid.Column="1" />
+        <Label Content="Legajo" HorizontalAlignment="Left" x:Name="label2" VerticalAlignment="Top" Margin="10,93,0,0" Foreground="White" FontSize="18" Grid.Column="1" Width="auto" />
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="58,134,0,0" x:Name="label3" VerticalAlignment="Top" Foreground="White" FontSize="18" Grid.ColumnSpan="2" />
+        <TextBox Height="29" HorizontalAlignment="Left" Margin="78,98,0,0" x:Name="txtUser" VerticalAlignment="Top" Width="166" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="#FFFF9666" FontSize="18" />
+        <PasswordBox Height="29" HorizontalAlignment="Left" Margin="78,139,0,0" x:Name="txtpassword" VerticalAlignment="Top" Width="166" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="#FFFF9666" FontSize="18" />
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="1" Margin="78,0,0,0" Stroke="#FF207178" VerticalAlignment="Center" Width="166"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="1" Margin="78,167,0,0" Stroke="#FF207178" VerticalAlignment="Top" Width="166"/>
 
     </Grid>
 </UserControl>

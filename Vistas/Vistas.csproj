@@ -320,6 +320,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\maderaR.jpg" />
+    <Resource Include="Login.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.png" />
