@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Vistas"
         xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="Vistas.Login"
-        Title="Login" Height="327" Width="293" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="Login" Height="720
+    " Width="1280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Images/maderaR.jpg" Stretch="UniformToFill" TileMode="Tile"/>
+            <ImageBrush ImageSource="/Login.jpg" Stretch="UniformToFill" TileMode="Tile"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="192*" />
@@ -19,9 +20,15 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!--<Image  Margin="-156,-44,-155,-18" x:Name="image1"  Stretch="Uniform" Source="/Vistas;component/Images/maderaR.jpeg" Grid.RowSpan="3" Opacity="1" Grid.ColumnSpan="3" />-->
-        <Label Content="Bienvenido" Height="38" HorizontalAlignment="Stretch" Margin="77,29,38,29" x:Name="label1" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FlowDirection="LeftToRight" Foreground="White" FontWeight="Bold" FontFamily="Candara" FontSize="22" Grid.ColumnSpan="2" />
 
-        <local:UserControl8 x:Name="UserC" Margin="-131,8,-103,17" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
-        <Button Content="Login" Grid.Row="2" Height="23" HorizontalAlignment="Stretch" Margin="98,36,19,0" x:Name="btnLogin" FontFamily="Montserrat" FontSize="14" Foreground="White" AllowDrop="False" Background="#BFA8A3" BorderBrush="White" BorderThickness="1,1,0,1" ClipToBounds="False" VerticalAlignment="Top" Width="75" Click="btnLogin_Click"/>
+        <local:UserControl8 x:Name="UserC" Margin="10,159,392,47" Loaded="UserC_Loaded" Grid.RowSpan="2"/>
+        <Button Content="Login" Grid.Row="1" Height="24" Margin="338,117,488,0" x:Name="btnLogin" FontFamily="Montserrat" FontSize="14" Foreground="White" AllowDrop="False" Background="#FF8E704B" BorderBrush="White"  ClipToBounds="False" VerticalAlignment="Top" Click="btnLogin_Click">
+            <Button.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.OpacityMask>
+        </Button>
     </Grid>
 </Window>
